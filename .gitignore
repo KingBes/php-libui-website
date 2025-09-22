@@ -1,1 +1,17 @@
-.git
+# 忽略所有内容
+*
+
+# 保留文件夹及其所有内容
+!/app
+!/app/assets
+!/app/assets/example
+!/app/assets/example/**
+
+!/app/markdown
+!/app/markdown/**
+
+!/config
+!/config/webpress.php
+
+# 保留 .gitignore 文件本身
+!.gitignore
