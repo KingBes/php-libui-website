@@ -1,6 +1,8 @@
 ## 窗口类
 
 > 窗口类 `use Kingbes\Libui\Window;`
+一个窗口仅包含一个占用整个窗口的子控件。
+窗口不能是控件的子级。
 
 <br>
 
@@ -39,6 +41,9 @@ public static function setTitle(CData $window, string $title): void
 
 静态方法`setContentSize`
 
+`注意：`内容大小不能包括菜单或者标题栏等窗口装饰
+此方法只是提示，系统可能会忽略此设置。
+
 - 参数
     - `CData` `$window` 窗口
     - `int` `$width` 宽度
@@ -52,14 +57,14 @@ public static function setContentSize(CData $window, int $width, int $height): v
 
 <br>
 
-#### 设置窗口是否全屏
+#### 窗口是否全屏
 
 静态方法`fullscreen`
 
 - 参数
     - `CData` `$window` 窗口
 - 返回
-    - `bool` 是否全屏
+    - `bool` 是否全屏 是: `true` 否: `false`
 
 ```php
 public static function fullscreen(CData $window): bool
@@ -73,7 +78,7 @@ public static function fullscreen(CData $window): bool
 
 - 参数
     - `CData` `$window` 窗口
-    - `bool` `$fullscreen` 是否全屏
+    - `bool` `$fullscreen` 是否全屏 全屏: `true` 否: `false`
 - 返回
     - `void`
 
@@ -86,6 +91,9 @@ public static function setFullscreen(CData $window, bool $fullscreen): void
 #### 窗口内容大小改变事件
 
 静态方法`onContentSizeChanged`
+
+`注意：` 一次只能注册一个回调
+调用 `setContentSize` 方法时不会触发回调。
 
 - 参数
     - `CData` `$window` 窗口
@@ -124,7 +132,7 @@ public static function create(string $title, int $width, int $height, int $hasMe
 - 参数
     - `CData` `$window` 窗口
 - 返回
-    - `bool` 是否无边框
+    - `bool` 是否无边框 true: 无边框 false: 有边框
 
 ```php
 public static function borderless(CData $window): bool
@@ -136,9 +144,11 @@ public static function borderless(CData $window): bool
 
 静态方法`setBorderless`
 
+`注意：`此方法只是提示，可能会被系统忽略
+
 - 参数
     - `CData` `$window` 窗口
-    - `bool` `$borderless` 是否无边框
+    - `bool` `$borderless` 是否无边框 true: 无边框 false: 有边框
 - 返回
     - `void`
 
@@ -154,7 +164,7 @@ public static function setBorderless(CData $window, bool $borderless): void
 
 - 参数
     - `CData` `$window` 窗口
-    - `CData` `$child` 子元素
+    - `CData` `$child` 子元素(控件)
 - 返回
     - `void`
 
