@@ -12,6 +12,10 @@
 
 - 参数
     - `callable<this, CData, CData>` `$draw` 绘制回调函数
+    - `callable<this, CData, CData>` `$KeyEvent` 键盘事件回调函数
+    - `callable<this, CData, CData>` `$MouseEvent` 鼠标事件回调函数
+    - `callable<this, CData, CData>` `$MouseCrossed` 鼠标跨域事件回调函数
+    - `callable<this, CData>` `$DragBroken` 拖动中断事件回调函数
 - 返回
     - `CData` 区域数据
 

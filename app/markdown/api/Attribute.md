@@ -438,3 +438,28 @@ public static function stringByteIndexToGrapheme(CData $attr, int $byteIndex): i
 ```php
 public static function stringGraphemeToByteIndex(CData $attr, int $graphemeIndex): int
 ```
+
+<br>
+
+#### 字符串属性设置
+
+静态方法`stringSet`
+
+- 参数
+    - `CData` `$attrStr` 属性字符串句柄
+    - `CData` `$attr` 属性句柄
+    - `int` `$start` 开始位置
+    - `int` `$end` 结束位置
+- 返回
+    - `void`
+
+```php
+public static function stringSet(
+    CData $attrStr, 
+    CData $attr, 
+    int $start, 
+    int $end
+): void
+```
+
+<br>

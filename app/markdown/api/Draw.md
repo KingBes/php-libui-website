@@ -537,3 +537,44 @@ public static function text(CData $c, CData $tl, float $x, float $y): void
 ```php
 public static function textLayoutExtents(CData $tl, float $width, float $height): void
 ```
+
+<br>
+
+#### 创建文本布局参数
+
+静态方法`createTextLayoutParams`
+
+- 参数
+    - `CData` `$str` 文本句柄
+    - `CData` `$font` 默认字体句柄
+    - `float` `$width` 文本宽度
+    - `TextAlign` `$align` 文本对齐方式
+- 返回
+    - `CData` 参数句柄
+
+```php
+public static function createTextLayoutParams(CData $str, CData $defaultFont, float $width, TextAlign $align): CData
+```
+
+<br>
+
+##### 创建字体描述符
+
+静态方法`createFontDesc`
+
+- 参数
+    - `string` `$family` 字体名称
+    - `float` `$size` 字体大小
+    - `TextWeight` `$weight` 字体权重
+    - `TextItalic` `$italic` 字体样式
+    - `TextStretch` `$stretch` 字体拉伸
+- 返回
+    - `CData` 字体描述符句柄
+
+```php
+public static function createFontDesc(string $family, float $size, TextWeight $weight, TextItalic $italic, TextStretch $stretch): CData
+```
+
+
+
+
